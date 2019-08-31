@@ -14,7 +14,7 @@ class DataService {
     
     let countries = [
         Country(flag: "GBP.png", initial: "GBP", countryName: "United Kingdom"),
-        Country(flag: "USA.png", initial: "USA", countryName: "United States"),
+        Country(flag: "USA.png", initial: "USD", countryName: "United States"),
         Country(flag: "AUD.png", initial: "AUD", countryName: "Australia"),
         Country(flag: "FRA.png", initial: "FRA", countryName: "France")
     ]

@@ -275,7 +275,7 @@
                                 <rect key="frame" x="0.0" y="117" width="414" height="779"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="114" id="jK2-ZU-Wqf">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConversionTableCell" rowHeight="114" id="jK2-ZU-Wqf" customClass="ConversionTableCell" customModule="CurrencyConverter" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jK2-ZU-Wqf" id="blb-Wf-Ow1">
@@ -327,6 +327,13 @@
                                                 <constraint firstItem="Lr0-Bh-1af" firstAttribute="trailing" secondItem="blb-Wf-Ow1" secondAttribute="trailingMargin" id="tIH-6Z-bFu"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstCountry" destination="GjP-8N-t5h" id="5iS-jj-Rl6"/>
+                                            <outlet property="firstCountryName" destination="rst-wm-COE" id="OZa-HE-kcw"/>
+                                            <outlet property="secondCountryInitial" destination="Lr0-Bh-1af" id="IWW-5O-xHv"/>
+                                            <outlet property="secondCountryName" destination="8qD-6d-Mqj" id="f2x-4c-kaT"/>
+                                            <outlet property="secondCountryValue" destination="YnG-pF-1ef" id="pFw-1i-k1S"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -344,6 +351,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="c2b-0J-d1S"/>
                     </view>
+                    <connections>
+                        <outlet property="conversionTableView" destination="FaP-rh-InI" id="IIM-7z-oIy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OWa-AG-76A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,6 +364,6 @@
         <image name="Plus" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dk4-Rq-83h"/>
+        <segue reference="5u6-nm-mMq"/>
     </inferredMetricsTieBreakers>
 </document>

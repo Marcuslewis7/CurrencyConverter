@@ -109,6 +109,18 @@ class CurrencyConverterTests: XCTestCase {
         XCTAssertEqual(countryModel, chosenCountry)
     }
     
+    //checks first input country field starts off blank
+    func testEndVCFirstCountry(){
+        let firstChosenCountry = EndVC.instance.myFirstPassCountry
+        XCTAssertEqual(firstChosenCountry, "")
+    }
+    
+    //checks second input country field starts off blank
+    func testEndVCSecondCountry(){
+        let secondChosenCountry = EndVC.instance.mySecondPassCountry
+        XCTAssertEqual(secondChosenCountry, "")
+    }
+    
     func testPerformanceExample() {
         self.measure {
             // Put the code you want to measure the time of here.
