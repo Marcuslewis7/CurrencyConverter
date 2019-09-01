@@ -44,17 +44,13 @@ class SecondCurrencyPickerVC: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chosenCountry = DataService.instance.countries[indexPath.row]
-        print("2: Second chosen country: \(chosenCountry.initial)")
         mySecondPassCountry = chosenCountry.initial
         performSegue(withIdentifier: "secondCountrySelected", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "secondCountrySelected" {
-            print("2: stored Country: \(mySecondPassCountry)")
             let toNextVC = segue.destination as? EndVC
-            print("2: " + myFirstPassCountry)
-            print("2: " + mySecondPassCountry)
             toNextVC?.myFirstPassCountry = myFirstPassCountry
             toNextVC?.mySecondPassCountry = mySecondPassCountry
         }

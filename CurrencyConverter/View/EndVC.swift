@@ -10,23 +10,19 @@ import Foundation
 import UIKit
 import CoreData
 
-struct ResponseData: Decodable {
-    //var name: String
-    var GBPUSD: Decimal
-}
-
 class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var conversionTableView: UITableView!
     
+    var timer = Timer()
     var CoreDataCountryArray = [CoreDataCountry]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     static let instance = EndVC()
     var myFirstPassCountry = String()
     var mySecondPassCountry = String()
-    var baseURL = "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios?pairs="
-    var myURLInput = String()
+    public var baseURL = "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios?pairs="
+    public var myURLInput = String()
     var URL = String()
     
     override func viewDidAppear(_ animated: Bool) {
@@ -44,58 +40,55 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let request1: URLRequest = URLRequest(url: url as URL)
         let queue:OperationQueue = OperationQueue()
         
-        /*weak var timer: Timer?
-        var timerDispatchSourceTimer : DispatchSourceTimer?
-        if #available(iOS 10.0, *) {
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-                
-            }
-        }*/
-        
         NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: URLResponse?, data: Data?, error: Error?) -> Void in
             do {
                 if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    print(URL)
-                    print(jsonResult)
                     let defaultValue = 0.0
                     let firstValue = (jsonResult["\(self.myFirstPassCountry)\(self.mySecondPassCountry)"] as? Double) ?? defaultValue
-                    print(firstValue)
-                    print("1 \(self.myFirstPassCountry) is equal to \(firstValue) \(self.mySecondPassCountry)")
-                    self.newItem(firstValue: firstValue)
-                    self.conversionTableView.reloadData()
+                    
+                    let predicate = NSPredicate(format: "combo == %@", "\(self.myFirstPassCountry)\(self.mySecondPassCountry)")
+                    request.predicate = predicate
+                    
+                    do{
+                        let object = try self.context.fetch(request)
+                        if object.count == 1 {
+                            let objectUpdate = object.first as! NSManagedObject
+                            objectUpdate.setValue(firstValue, forKey: "value")
+                            do{
+                                try self.context.save()
+                            }
+                            catch
+                            {
+                                print(error)
+                            }
+                        }
+                        else{
+                            self.newItem(firstValue: firstValue)
+                        }
+                    }
+                    catch let error as NSError {
+                        print("Could not fetch \(error), \(error.userInfo)")
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.conversionTableView.reloadData()
+                    }
                 }
             } catch let error as NSError {
                 print(error)
             }
         })
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CoreDataCountryArray.count
+        
+        scheduledTimerWithTimeInterval()
+    }//viewdidAppear
+    
+    func scheduledTimerWithTimeInterval(){
+        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "ConversionTableCell") as? ConversionTableCell {
-            let coreDataCountry = CoreDataCountryArray[indexPath.row]
-            cell.initial.text = coreDataCountry.initial
-            cell.initial2.text = coreDataCountry.initial2
-            cell.value.text = String(coreDataCountry.value)
-            return cell
-        } else {
-            return ConversionTableCell()
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-   
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            self.context.delete(self.CoreDataCountryArray[indexPath.row])
-            self.CoreDataCountryArray.remove(at: indexPath.row)
-            conversionTableView.deleteRows(at: [indexPath], with: .fade)
-        }
+    @objc func updateCounting(){
+        NSLog("counting..")
     }
     
     func newItem(firstValue: Double){
@@ -103,6 +96,7 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         newItem.initial = self.myFirstPassCountry
         newItem.initial2 = self.mySecondPassCountry
         newItem.value = firstValue
+        newItem.combo = "\(self.myFirstPassCountry)\(self.mySecondPassCountry)"
         self.CoreDataCountryArray.append(newItem)
     }
     
@@ -124,4 +118,43 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
+    /////////Table View functions/////////////
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CoreDataCountryArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ConversionTableCell") as? ConversionTableCell {
+            let coreDataCountry = CoreDataCountryArray[indexPath.row]
+            cell.initial.text = coreDataCountry.initial
+            cell.initial2.text = coreDataCountry.initial2
+            cell.value.text = String(coreDataCountry.value)
+            return cell
+        } else {
+            return ConversionTableCell()
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.context.delete(self.CoreDataCountryArray[indexPath.row])
+            self.CoreDataCountryArray.remove(at: indexPath.row)
+            conversionTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
 }
+
+
+/*weak var timer: Timer?
+ var timerDispatchSourceTimer : DispatchSourceTimer?
+ if #available(iOS 10.0, *) {
+ timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+ 
+ }
+ }*/
