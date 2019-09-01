@@ -12,6 +12,7 @@ import CoreData
 
 class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+
     @IBOutlet weak var conversionTableView: UITableView!
     
     var timer = Timer()
@@ -30,7 +31,14 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         conversionTableView.dataSource = self
         conversionTableView.delegate = self
         self.conversionTableView.rowHeight = 80.0
-        
+        scheduledTimerWithTimeInterval()
+    }
+
+    func scheduledTimerWithTimeInterval(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateCounting(){
         let request : NSFetchRequest<CoreDataCountry> = CoreDataCountry.fetchRequest()
         loadCoreDataCountry(with: request)
         let myURLInput = "\(myFirstPassCountry)\(mySecondPassCountry)&pairs=\(mySecondPassCountry)\(myFirstPassCountry)"
@@ -78,17 +86,6 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                 print(error)
             }
         })
-        
-        scheduledTimerWithTimeInterval()
-    }//viewdidAppear
-    
-    func scheduledTimerWithTimeInterval(){
-        // Scheduling timer to Call the function "updateCounting" with the interval of 1 seconds
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateCounting(){
-        NSLog("counting..")
     }
     
     func newItem(firstValue: Double){
