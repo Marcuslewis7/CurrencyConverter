@@ -11,7 +11,7 @@ import UIKit
 
 class RoundedImage: UIImageView {
     
-    @IBInspectable var cornerRadius: CGFloat = 35.0 {
+    @IBInspectable var cornerRadius: CGFloat = 19.0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }

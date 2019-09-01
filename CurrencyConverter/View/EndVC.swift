@@ -44,10 +44,14 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let request1: URLRequest = URLRequest(url: url as URL)
         let queue:OperationQueue = OperationQueue()
         
-        //weak var timer: Timer?
-        //var timerDispatchSourceTimer : DispatchSourceTimer?
-        //if #available(iOS 10.0, *) {
-        //    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+        /*weak var timer: Timer?
+        var timerDispatchSourceTimer : DispatchSourceTimer?
+        if #available(iOS 10.0, *) {
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                
+            }
+        }*/
+        
         NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: URLResponse?, data: Data?, error: Error?) -> Void in
             do {
                 if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
@@ -57,27 +61,14 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
                     let firstValue = (jsonResult["\(self.myFirstPassCountry)\(self.mySecondPassCountry)"] as? Double) ?? defaultValue
                     print(firstValue)
                     print("1 \(self.myFirstPassCountry) is equal to \(firstValue) \(self.mySecondPassCountry)")
-                    
-                    
-                    let newItem = CoreDataCountry(context: self.context)
-                    newItem.initial = self.myFirstPassCountry
-                    newItem.initial2 = self.mySecondPassCountry
-                    newItem.value = firstValue
-                    self.CoreDataCountryArray.append(newItem)
-                    self.saveCountries()
-                    
+                    self.newItem(firstValue: firstValue)
+                    self.conversionTableView.reloadData()
                 }
             } catch let error as NSError {
                 print(error)
             }
         })
-        //}
     }
-    
-    /*override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }*/
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CoreDataCountryArray.count
@@ -86,16 +77,9 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ConversionTableCell") as? ConversionTableCell {
             let coreDataCountry = CoreDataCountryArray[indexPath.row]
-            //cell.textLabel?.text = coreDataCountry.initial
-            //cell.detailTextLabel?.text = coreDataCountry.initial2
-            
             cell.initial.text = coreDataCountry.initial
             cell.initial2.text = coreDataCountry.initial2
-            //let doubValue = "error"
-            //cell.value.text = (coreDataCountry.value as? String) ?? doubValue
             cell.value.text = String(coreDataCountry.value)
-            
-            //cell.delegate = self
             return cell
         } else {
             return ConversionTableCell()
@@ -105,11 +89,21 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+   
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            self.context.delete(self.CoreDataCountryArray[indexPath.row])
+            self.CoreDataCountryArray.remove(at: indexPath.row)
+            conversionTableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.context.delete(self.CoreDataCountryArray[indexPath.row])
-        self.CoreDataCountryArray.remove(at: indexPath.row)
-        self.saveCountries()
+    func newItem(firstValue: Double){
+        let newItem = CoreDataCountry(context: self.context)
+        newItem.initial = self.myFirstPassCountry
+        newItem.initial2 = self.mySecondPassCountry
+        newItem.value = firstValue
+        self.CoreDataCountryArray.append(newItem)
     }
     
     func loadCoreDataCountry(with request: NSFetchRequest<CoreDataCountry> = CoreDataCountry.fetchRequest()) {

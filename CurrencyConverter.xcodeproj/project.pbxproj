@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		918F6AF7231C05E4006222B1 /* GBP.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AEC231C05E3006222B1 /* GBP.png */; };
+		918F6AF8231C05E4006222B1 /* NOK.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AED231C05E3006222B1 /* NOK.png */; };
+		918F6AF9231C05E4006222B1 /* USD.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AEE231C05E3006222B1 /* USD.png */; };
+		918F6AFA231C05E4006222B1 /* CZK.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AEF231C05E3006222B1 /* CZK.png */; };
+		918F6AFB231C05E4006222B1 /* PLN.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF0231C05E3006222B1 /* PLN.png */; };
+		918F6AFC231C05E4006222B1 /* SEK.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF1231C05E3006222B1 /* SEK.png */; };
+		918F6AFD231C05E4006222B1 /* SGD.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF2231C05E3006222B1 /* SGD.png */; };
+		918F6AFE231C05E4006222B1 /* HUG.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF3231C05E4006222B1 /* HUG.png */; };
+		918F6AFF231C05E4006222B1 /* HKD.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF4231C05E4006222B1 /* HKD.png */; };
+		918F6B00231C05E4006222B1 /* EUR.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF5231C05E4006222B1 /* EUR.png */; };
+		918F6B01231C05E4006222B1 /* DKK.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF6231C05E4006222B1 /* DKK.png */; };
 		91B1F1402315C6B30089BF06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F13F2315C6B30089BF06 /* AppDelegate.swift */; };
 		91B1F1422315C6B30089BF06 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1412315C6B30089BF06 /* StartVC.swift */; };
 		91B1F1452315C6B30089BF06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1F1432315C6B30089BF06 /* Main.storyboard */; };
@@ -24,7 +35,6 @@
 		91B1F1852315DA120089BF06 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1842315DA120089BF06 /* DataService.swift */; };
 		91B1F1862315DC630089BF06 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1842315DA120089BF06 /* DataService.swift */; };
 		91B1F1872315DC630089BF06 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1842315DA120089BF06 /* DataService.swift */; };
-		91B1F1902315DF640089BF06 /* GBP.png in Resources */ = {isa = PBXBuildFile; fileRef = 91B1F18C2315DF640089BF06 /* GBP.png */; };
 		91B1F1922315E28B0089BF06 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1802315D7560089BF06 /* Country.swift */; };
 		91B1F1932315E28C0089BF06 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1802315D7560089BF06 /* Country.swift */; };
 		91B1F1942315E2920089BF06 /* FirstCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1752315CAE20089BF06 /* FirstCurrencyPickerVC.swift */; };
@@ -35,9 +45,6 @@
 		91B1F19D2316767B0089BF06 /* SecondCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19C2316767B0089BF06 /* SecondCurrencyPickerVC.swift */; };
 		91B1F19F2316F8E10089BF06 /* EndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19E2316F8E10089BF06 /* EndVC.swift */; };
 		91B1F1A2231703F90089BF06 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1A1231703F90089BF06 /* RoundedImage.swift */; };
-		91CBC8D52319B84300E9BABA /* USA.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CBC8D42319B84300E9BABA /* USA.png */; };
-		91CBC8D72319B84B00E9BABA /* AUD.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CBC8D62319B84B00E9BABA /* AUD.png */; };
-		91CBC8D92319B85A00E9BABA /* FRA.png in Resources */ = {isa = PBXBuildFile; fileRef = 91CBC8D82319B85A00E9BABA /* FRA.png */; };
 		91CBC8DA2319CA7C00E9BABA /* SecondCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19C2316767B0089BF06 /* SecondCurrencyPickerVC.swift */; };
 		91CBC8DB2319CA7C00E9BABA /* EndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19E2316F8E10089BF06 /* EndVC.swift */; };
 		91CBC8DC2319CA8500E9BABA /* SecondCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19C2316767B0089BF06 /* SecondCurrencyPickerVC.swift */; };
@@ -70,6 +77,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		918F6AEC231C05E3006222B1 /* GBP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GBP.png; sourceTree = "<group>"; };
+		918F6AED231C05E3006222B1 /* NOK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NOK.png; sourceTree = "<group>"; };
+		918F6AEE231C05E3006222B1 /* USD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USD.png; sourceTree = "<group>"; };
+		918F6AEF231C05E3006222B1 /* CZK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CZK.png; sourceTree = "<group>"; };
+		918F6AF0231C05E3006222B1 /* PLN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLN.png; sourceTree = "<group>"; };
+		918F6AF1231C05E3006222B1 /* SEK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEK.png; sourceTree = "<group>"; };
+		918F6AF2231C05E3006222B1 /* SGD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SGD.png; sourceTree = "<group>"; };
+		918F6AF3231C05E4006222B1 /* HUG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUG.png; sourceTree = "<group>"; };
+		918F6AF4231C05E4006222B1 /* HKD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HKD.png; sourceTree = "<group>"; };
+		918F6AF5231C05E4006222B1 /* EUR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EUR.png; sourceTree = "<group>"; };
+		918F6AF6231C05E4006222B1 /* DKK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DKK.png; sourceTree = "<group>"; };
 		91B1F13C2315C6B30089BF06 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91B1F13F2315C6B30089BF06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		91B1F1412315C6B30089BF06 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
@@ -89,14 +107,10 @@
 		91B1F17B2315D2F90089BF06 /* FirstCountryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstCountryTableCell.swift; sourceTree = "<group>"; };
 		91B1F1802315D7560089BF06 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		91B1F1842315DA120089BF06 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		91B1F18C2315DF640089BF06 /* GBP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GBP.png; sourceTree = "<group>"; };
 		91B1F19A231675FB0089BF06 /* SecondCountryTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCountryTableCell.swift; sourceTree = "<group>"; };
 		91B1F19C2316767B0089BF06 /* SecondCurrencyPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCurrencyPickerVC.swift; sourceTree = "<group>"; };
 		91B1F19E2316F8E10089BF06 /* EndVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndVC.swift; sourceTree = "<group>"; };
 		91B1F1A1231703F90089BF06 /* RoundedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
-		91CBC8D42319B84300E9BABA /* USA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = USA.png; sourceTree = "<group>"; };
-		91CBC8D62319B84B00E9BABA /* AUD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AUD.png; sourceTree = "<group>"; };
-		91CBC8D82319B85A00E9BABA /* FRA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FRA.png; sourceTree = "<group>"; };
 		91CBC8E2231AB28A00E9BABA /* ConversionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionTableCell.swift; sourceTree = "<group>"; };
 		91CBC8E4231AB42000E9BABA /* ReturnedCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnedCountry.swift; sourceTree = "<group>"; };
 		91CBC8E6231ABCEC00E9BABA /* PreLoadedPropertyList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PreLoadedPropertyList.plist; sourceTree = "<group>"; };
@@ -134,10 +148,17 @@
 				91B1F1562315C6B60089BF06 /* CurrencyConverterTests */,
 				91B1F1612315C6B60089BF06 /* CurrencyConverterUITests */,
 				91B1F13D2315C6B30089BF06 /* Products */,
-				91B1F18C2315DF640089BF06 /* GBP.png */,
-				91CBC8D42319B84300E9BABA /* USA.png */,
-				91CBC8D62319B84B00E9BABA /* AUD.png */,
-				91CBC8D82319B85A00E9BABA /* FRA.png */,
+				918F6AEF231C05E3006222B1 /* CZK.png */,
+				918F6AF6231C05E4006222B1 /* DKK.png */,
+				918F6AF5231C05E4006222B1 /* EUR.png */,
+				918F6AEC231C05E3006222B1 /* GBP.png */,
+				918F6AF4231C05E4006222B1 /* HKD.png */,
+				918F6AF3231C05E4006222B1 /* HUG.png */,
+				918F6AED231C05E3006222B1 /* NOK.png */,
+				918F6AF0231C05E3006222B1 /* PLN.png */,
+				918F6AF1231C05E3006222B1 /* SEK.png */,
+				918F6AF2231C05E3006222B1 /* SGD.png */,
+				918F6AEE231C05E3006222B1 /* USD.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -347,15 +368,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91CBC8D92319B85A00E9BABA /* FRA.png in Resources */,
+				918F6AFD231C05E4006222B1 /* SGD.png in Resources */,
+				918F6AFA231C05E4006222B1 /* CZK.png in Resources */,
+				918F6AFE231C05E4006222B1 /* HUG.png in Resources */,
+				918F6B00231C05E4006222B1 /* EUR.png in Resources */,
+				918F6B01231C05E4006222B1 /* DKK.png in Resources */,
 				91CBC8E7231ABCEC00E9BABA /* PreLoadedPropertyList.plist in Resources */,
 				91B1F14A2315C6B60089BF06 /* Assets.xcassets in Resources */,
+				918F6AFF231C05E4006222B1 /* HKD.png in Resources */,
 				91B1F1732315C7CD0089BF06 /* Launch Screen.storyboard in Resources */,
-				91CBC8D72319B84B00E9BABA /* AUD.png in Resources */,
+				918F6AF8231C05E4006222B1 /* NOK.png in Resources */,
+				918F6AF7231C05E4006222B1 /* GBP.png in Resources */,
+				918F6AFB231C05E4006222B1 /* PLN.png in Resources */,
 				91B1F1782315D0D90089BF06 /* currencies.json in Resources */,
+				918F6AFC231C05E4006222B1 /* SEK.png in Resources */,
+				918F6AF9231C05E4006222B1 /* USD.png in Resources */,
 				91B1F1452315C6B30089BF06 /* Main.storyboard in Resources */,
-				91CBC8D52319B84300E9BABA /* USA.png in Resources */,
-				91B1F1902315DF640089BF06 /* GBP.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
