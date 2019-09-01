@@ -2,9 +2,10 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoreDataCountry" representedClassName=".CoreDataCountry" syncable="YES" codeGenerationType="class">
         <attribute name="initial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="initial2" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CoreDataCountry" positionX="-54" positionY="9" width="128" height="75"/>
+        <element name="CoreDataCountry" positionX="-54" positionY="9" width="128" height="90"/>
     </elements>
 </model>

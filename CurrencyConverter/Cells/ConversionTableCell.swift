@@ -11,18 +11,16 @@ import Foundation
 
 class ConversionTableCell: UITableViewCell  {
     
-    @IBOutlet weak var firstCountry: UILabel!
-    @IBOutlet weak var secondCountryValue: UILabel!
-    @IBOutlet weak var firstCountryName: UILabel!
-    @IBOutlet weak var secondCountryInitial: UILabel!
-    @IBOutlet weak var secondCountryName: UILabel!
+    @IBOutlet weak var initial: UILabel!
+    @IBOutlet weak var initial2: UILabel!
+    @IBOutlet weak var value: UILabel!
     
-    /*func updateViews(country: Country) {
-        mySecondFlag.image = UIImage(named: country.flag)
-        mySecondInitial.text = country.initial
-        mySecondCountryName.text = country.countryName
+    func updateViews(country: ReturnedCountry) {
+        initial.text = country.initial
+        initial2.text = country.initial2
+        //value.text = country.value
     }
- */
+ 
     
     
 }

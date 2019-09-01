@@ -29,9 +29,8 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var myURLInput = String()
     var URL = String()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         conversionTableView.dataSource = self
         conversionTableView.delegate = self
         self.conversionTableView.rowHeight = 80.0
@@ -49,30 +48,36 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         //var timerDispatchSourceTimer : DispatchSourceTimer?
         //if #available(iOS 10.0, *) {
         //    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
-                NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: URLResponse?, data: Data?, error: Error?) -> Void in
-                    do {
-                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                            print(URL)
-                            print(jsonResult)
-                            let defaultValue = 0.0
-                            let firstValue = (jsonResult["\(self.myFirstPassCountry)\(self.mySecondPassCountry)"] as? Double) ?? defaultValue
-                            print(firstValue)
-                            print("1 \(self.myFirstPassCountry) is equal to \(firstValue) \(self.mySecondPassCountry)")
-                            
-                            
-                            let newItem = CoreDataCountry(context: self.context)
-                            newItem.initial = self.myFirstPassCountry
-                            newItem.value = firstValue
-                            self.CoreDataCountryArray.append(newItem)
-                            self.saveCountries()
-                            
-                        }
-                    } catch let error as NSError {
-                        print(error)
-                    }
-                })
-            //}
+        NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: URLResponse?, data: Data?, error: Error?) -> Void in
+            do {
+                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                    print(URL)
+                    print(jsonResult)
+                    let defaultValue = 0.0
+                    let firstValue = (jsonResult["\(self.myFirstPassCountry)\(self.mySecondPassCountry)"] as? Double) ?? defaultValue
+                    print(firstValue)
+                    print("1 \(self.myFirstPassCountry) is equal to \(firstValue) \(self.mySecondPassCountry)")
+                    
+                    
+                    let newItem = CoreDataCountry(context: self.context)
+                    newItem.initial = self.myFirstPassCountry
+                    newItem.initial2 = self.mySecondPassCountry
+                    newItem.value = firstValue
+                    self.CoreDataCountryArray.append(newItem)
+                    self.saveCountries()
+                    
+                }
+            } catch let error as NSError {
+                print(error)
+            }
+        })
+        //}
     }
+    
+    /*override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }*/
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CoreDataCountryArray.count
@@ -81,12 +86,15 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ConversionTableCell") as? ConversionTableCell {
             let coreDataCountry = CoreDataCountryArray[indexPath.row]
-            cell.textLabel?.text = coreDataCountry.initial
+            //cell.textLabel?.text = coreDataCountry.initial
+            //cell.detailTextLabel?.text = coreDataCountry.initial2
             
+            cell.initial.text = coreDataCountry.initial
+            cell.initial2.text = coreDataCountry.initial2
+            //let doubValue = "error"
+            //cell.value.text = (coreDataCountry.value as? String) ?? doubValue
+            cell.value.text = String(coreDataCountry.value)
             
-            //cell.textLabel2?.text = coreDataCountry.countries2
-            //cell.valueLabel?.text = coreDataCountry.conversion1
-            //cell.valueLabel2?.text = coreDataCountry.conversion2
             //cell.delegate = self
             return cell
         } else {
@@ -99,6 +107,9 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.context.delete(self.CoreDataCountryArray[indexPath.row])
+        self.CoreDataCountryArray.remove(at: indexPath.row)
+        self.saveCountries()
     }
     
     func loadCoreDataCountry(with request: NSFetchRequest<CoreDataCountry> = CoreDataCountry.fetchRequest()) {

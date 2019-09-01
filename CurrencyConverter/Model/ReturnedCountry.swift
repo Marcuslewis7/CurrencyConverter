@@ -12,11 +12,13 @@ import UIKit
 struct ReturnedCountry {
     
     private(set) public var initial: String
-    private(set) public var value: Decimal
+    private(set) public var initial2: String
+    //private(set) public var value: Double
     
-    init(initial: String, value: Decimal) {
+    init(initial: String, initial2: String/*, value: Decimal*/) {
         self.initial = initial
-        self.value = value
+        self.initial2 = initial2
+        //self.value = value
     }
     
 }
