@@ -19,14 +19,12 @@ class SecondCurrencyPickerVC: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         secondCountryTable.dataSource = self
         secondCountryTable.delegate = self
-        //firstCountryTable.reloadData()
         self.secondCountryTable.rowHeight = 80.0
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataService.instance.getCountries().count
-        //return json.getCountries().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,7 +46,6 @@ class SecondCurrencyPickerVC: UIViewController, UITableViewDataSource, UITableVi
         let chosenCountry = DataService.instance.countries[indexPath.row]
         print("2: Second chosen country: \(chosenCountry.initial)")
         mySecondPassCountry = chosenCountry.initial
-        //myPassCountry.append(myPassCountry)
         performSegue(withIdentifier: "secondCountrySelected", sender: self)
     }
     

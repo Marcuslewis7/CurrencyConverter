@@ -6,8 +6,14 @@
 //  Copyright © 2019 Marcus Lewis. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import CoreData
+
+struct ResponseData: Decodable {
+    //var name: String
+    var GBPUSD: Decimal
+}
 
 class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -28,12 +34,10 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
         conversionTableView.dataSource = self
         conversionTableView.delegate = self
-        //conversionTableView.reloadData()
         self.conversionTableView.rowHeight = 80.0
         
         let request : NSFetchRequest<CoreDataCountry> = CoreDataCountry.fetchRequest()
         loadCoreDataCountry(with: request)
-    
         let myURLInput = "\(myFirstPassCountry)\(mySecondPassCountry)&pairs=\(mySecondPassCountry)\(myFirstPassCountry)"
         let URL = baseURL + myURLInput
         let urlPath: String = baseURL + myURLInput
@@ -41,21 +45,35 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let request1: URLRequest = URLRequest(url: url as URL)
         let queue:OperationQueue = OperationQueue()
         
-        NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: URLResponse?, data: Data?, error: Error?) -> Void in
-            do {
-                if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
-                    print(URL)
-                    print(jsonResult)
-                }
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        })
-        
-        
-    
+        //weak var timer: Timer?
+        //var timerDispatchSourceTimer : DispatchSourceTimer?
+        //if #available(iOS 10.0, *) {
+        //    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
+                NSURLConnection.sendAsynchronousRequest(request1, queue: queue, completionHandler:{ (response: URLResponse?, data: Data?, error: Error?) -> Void in
+                    do {
+                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                            print(URL)
+                            print(jsonResult)
+                            let defaultValue = 0.0
+                            let firstValue = (jsonResult["\(self.myFirstPassCountry)\(self.mySecondPassCountry)"] as? Double) ?? defaultValue
+                            print(firstValue)
+                            print("1 \(self.myFirstPassCountry) is equal to \(firstValue) \(self.mySecondPassCountry)")
+                            
+                            
+                            let newItem = CoreDataCountry(context: self.context)
+                            newItem.initial = self.myFirstPassCountry
+                            newItem.value = firstValue
+                            self.CoreDataCountryArray.append(newItem)
+                            self.saveCountries()
+                            
+                        }
+                    } catch let error as NSError {
+                        print(error)
+                    }
+                })
+            //}
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CoreDataCountryArray.count
     }
@@ -63,7 +81,9 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ConversionTableCell") as? ConversionTableCell {
             let coreDataCountry = CoreDataCountryArray[indexPath.row]
-            //cell.textLabel?.text = coreDataCountry.countries1
+            cell.textLabel?.text = coreDataCountry.initial
+            
+            
             //cell.textLabel2?.text = coreDataCountry.countries2
             //cell.valueLabel?.text = coreDataCountry.conversion1
             //cell.valueLabel2?.text = coreDataCountry.conversion2
@@ -79,11 +99,6 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //let chosenWorkout = DataService.instance.allWorkouts[indexPath.row]
-        //print("chosen videoCode: \(chosenWorkout.videoCode)")
-        //myPassVideoCode = chosenWorkout.videoCode
-        //print("this is my:  " + myPassVideoCode)//Note: this whole print does not appear in the console either
-        //videocode.append(myPassVideoCode)
     }
     
     func loadCoreDataCountry(with request: NSFetchRequest<CoreDataCountry> = CoreDataCountry.fetchRequest()) {
@@ -93,21 +108,15 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             print("Error fetching data for context")
         }
     }
-
-
-}
-
-/*extension EndVC: SwipeTableViewCellDelegate {
     
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        let deleteAction = SwipeAction(style: .destructive, title: "Delete") { action, indexPath in
-            self.context.delete(self.itemArray[indexPath.row])
-            self.itemArray.remove(at: indexPath.row)
-            self.saveItems()
+    func saveCountries(){
+        do{
+            try context.save()
+        } catch {
+            print("error saving context")
         }
-        deleteAction.image = UIImage(named: "deleteIcon")
-        return [deleteAction]
+        self.conversionTableView.reloadData()
     }
     
+    
 }
-*/

@@ -18,14 +18,12 @@ class FirstCurrencyPickerVC: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         firstCountryTable.dataSource = self
         firstCountryTable.delegate = self
-        //firstCountryTable.reloadData()
         self.firstCountryTable.rowHeight = 80.0
         
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataService.instance.getCountries().count
-        //return json.getCountries().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -47,7 +45,6 @@ class FirstCurrencyPickerVC: UIViewController, UITableViewDataSource, UITableVie
         let chosenCountry = DataService.instance.countries[indexPath.row]
         print("1: First chosen country: \(chosenCountry.initial)")
         myFirstPassCountry = chosenCountry.initial
-        //countryName.append(myPassCountry)
         performSegue(withIdentifier: "firstCountrySelected", sender: self)
     }
     
