@@ -24,39 +24,21 @@
 		91B1F1452315C6B30089BF06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1F1432315C6B30089BF06 /* Main.storyboard */; };
 		91B1F1482315C6B30089BF06 /* CurrencyConverter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1462315C6B30089BF06 /* CurrencyConverter.xcdatamodeld */; };
 		91B1F14A2315C6B60089BF06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91B1F1492315C6B60089BF06 /* Assets.xcassets */; };
-		91B1F1582315C6B60089BF06 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1572315C6B60089BF06 /* CurrencyConverterTests.swift */; };
-		91B1F1632315C6B60089BF06 /* CurrencyConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1622315C6B60089BF06 /* CurrencyConverterUITests.swift */; };
 		91B1F1732315C7CD0089BF06 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91B1F1722315C7CD0089BF06 /* Launch Screen.storyboard */; };
 		91B1F1762315CAE20089BF06 /* FirstCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1752315CAE20089BF06 /* FirstCurrencyPickerVC.swift */; };
 		91B1F1782315D0D90089BF06 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 91B1F1772315D0D90089BF06 /* currencies.json */; };
 		91B1F17C2315D2F90089BF06 /* FirstCountryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F17B2315D2F90089BF06 /* FirstCountryTableCell.swift */; };
 		91B1F1812315D7560089BF06 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1802315D7560089BF06 /* Country.swift */; };
-		91B1F1822315D92C0089BF06 /* FirstCountryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F17B2315D2F90089BF06 /* FirstCountryTableCell.swift */; };
-		91B1F1832315D92E0089BF06 /* FirstCountryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F17B2315D2F90089BF06 /* FirstCountryTableCell.swift */; };
 		91B1F1852315DA120089BF06 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1842315DA120089BF06 /* DataService.swift */; };
-		91B1F1862315DC630089BF06 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1842315DA120089BF06 /* DataService.swift */; };
-		91B1F1872315DC630089BF06 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1842315DA120089BF06 /* DataService.swift */; };
-		91B1F1922315E28B0089BF06 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1802315D7560089BF06 /* Country.swift */; };
-		91B1F1932315E28C0089BF06 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1802315D7560089BF06 /* Country.swift */; };
-		91B1F1942315E2920089BF06 /* FirstCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1752315CAE20089BF06 /* FirstCurrencyPickerVC.swift */; };
-		91B1F1952315E2920089BF06 /* FirstCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1752315CAE20089BF06 /* FirstCurrencyPickerVC.swift */; };
-		91B1F1962315E2C60089BF06 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1412315C6B30089BF06 /* StartVC.swift */; };
-		91B1F1972315E2C70089BF06 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1412315C6B30089BF06 /* StartVC.swift */; };
 		91B1F19B231675FB0089BF06 /* SecondCountryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19A231675FB0089BF06 /* SecondCountryTableCell.swift */; };
 		91B1F19D2316767B0089BF06 /* SecondCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19C2316767B0089BF06 /* SecondCurrencyPickerVC.swift */; };
 		91B1F19F2316F8E10089BF06 /* EndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19E2316F8E10089BF06 /* EndVC.swift */; };
 		91B1F1A2231703F90089BF06 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1A1231703F90089BF06 /* RoundedImage.swift */; };
-		91CBC8DA2319CA7C00E9BABA /* SecondCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19C2316767B0089BF06 /* SecondCurrencyPickerVC.swift */; };
-		91CBC8DB2319CA7C00E9BABA /* EndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19E2316F8E10089BF06 /* EndVC.swift */; };
-		91CBC8DC2319CA8500E9BABA /* SecondCurrencyPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19C2316767B0089BF06 /* SecondCurrencyPickerVC.swift */; };
-		91CBC8DD2319CA8500E9BABA /* EndVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19E2316F8E10089BF06 /* EndVC.swift */; };
-		91CBC8DE2319CAA000E9BABA /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1A1231703F90089BF06 /* RoundedImage.swift */; };
-		91CBC8DF2319CAA000E9BABA /* SecondCountryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19A231675FB0089BF06 /* SecondCountryTableCell.swift */; };
-		91CBC8E02319CAA800E9BABA /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1A1231703F90089BF06 /* RoundedImage.swift */; };
-		91CBC8E12319CAA800E9BABA /* SecondCountryTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F19A231675FB0089BF06 /* SecondCountryTableCell.swift */; };
 		91CBC8E3231AB28A00E9BABA /* ConversionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CBC8E2231AB28A00E9BABA /* ConversionTableCell.swift */; };
 		91CBC8E7231ABCEC00E9BABA /* PreLoadedPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91CBC8E6231ABCEC00E9BABA /* PreLoadedPropertyList.plist */; };
 		91CBC8E8231ABD1400E9BABA /* PreLoadedPropertyList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91CBC8E6231ABCEC00E9BABA /* PreLoadedPropertyList.plist */; };
+		91CE9297231D24EC001BE574 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1572315C6B60089BF06 /* CurrencyConverterTests.swift */; };
+		91CE9298231D2595001BE574 /* CurrencyConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B1F1622315C6B60089BF06 /* CurrencyConverterUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -429,16 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91CBC8E02319CAA800E9BABA /* RoundedImage.swift in Sources */,
-				91CBC8E12319CAA800E9BABA /* SecondCountryTableCell.swift in Sources */,
-				91CBC8DA2319CA7C00E9BABA /* SecondCurrencyPickerVC.swift in Sources */,
-				91CBC8DB2319CA7C00E9BABA /* EndVC.swift in Sources */,
-				91B1F1922315E28B0089BF06 /* Country.swift in Sources */,
-				91B1F1862315DC630089BF06 /* DataService.swift in Sources */,
-				91B1F1942315E2920089BF06 /* FirstCurrencyPickerVC.swift in Sources */,
-				91B1F1822315D92C0089BF06 /* FirstCountryTableCell.swift in Sources */,
-				91B1F1582315C6B60089BF06 /* CurrencyConverterTests.swift in Sources */,
-				91B1F1962315E2C60089BF06 /* StartVC.swift in Sources */,
+				91CE9297231D24EC001BE574 /* CurrencyConverterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,16 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91CBC8DE2319CAA000E9BABA /* RoundedImage.swift in Sources */,
-				91CBC8DF2319CAA000E9BABA /* SecondCountryTableCell.swift in Sources */,
-				91CBC8DC2319CA8500E9BABA /* SecondCurrencyPickerVC.swift in Sources */,
-				91CBC8DD2319CA8500E9BABA /* EndVC.swift in Sources */,
-				91B1F1932315E28C0089BF06 /* Country.swift in Sources */,
-				91B1F1872315DC630089BF06 /* DataService.swift in Sources */,
-				91B1F1952315E2920089BF06 /* FirstCurrencyPickerVC.swift in Sources */,
-				91B1F1832315D92E0089BF06 /* FirstCountryTableCell.swift in Sources */,
-				91B1F1632315C6B60089BF06 /* CurrencyConverterUITests.swift in Sources */,
-				91B1F1972315E2C70089BF06 /* StartVC.swift in Sources */,
+				91CE9298231D2595001BE574 /* CurrencyConverterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45LUMXSNAB;
 				INFOPLIST_FILE = CurrencyConverterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

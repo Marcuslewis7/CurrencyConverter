@@ -12,13 +12,13 @@ import CoreData
 
 class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-
-    @IBOutlet weak var conversionTableView: UITableView!
     
+    @IBOutlet weak var conversionTableView: UITableView!
     var timer = Timer()
     var CoreDataCountryArray = [CoreDataCountry]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    //set up for correct URL to be called.
     static let instance = EndVC()
     var myFirstPassCountry = String()
     var mySecondPassCountry = String()
@@ -33,7 +33,8 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         self.conversionTableView.rowHeight = 80.0
         scheduledTimerWithTimeInterval()
     }
-
+    
+    //timer which sets how frequently currencies update timeInterval: 1 for 1 sec
     func scheduledTimerWithTimeInterval(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
     }
@@ -88,6 +89,9 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         })
     }
     
+    
+    ///////////CoreData functions///////////
+    
     func newItem(firstValue: Double){
         let newItem = CoreDataCountry(context: self.context)
         newItem.initial = self.myFirstPassCountry
@@ -115,8 +119,10 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     
-    /////////Table View functions/////////////
     
+    
+    /////////Table View functions/////////////
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CoreDataCountryArray.count
     }
@@ -146,12 +152,3 @@ class EndVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
 }
-
-
-/*weak var timer: Timer?
- var timerDispatchSourceTimer : DispatchSourceTimer?
- if #available(iOS 10.0, *) {
- timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
- 
- }
- }*/

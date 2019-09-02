@@ -12,17 +12,15 @@ import XCTest
 class CurrencyConverterTests: XCTestCase {
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
+    
     func testCountryModel() {
         //test evaulates if all items from countries in DataService are fed in.
         let dataService = DataService.instance.getCountries().count
-        XCTAssertEqual(dataService, 4)
+        XCTAssertEqual(dataService, 11)
     }
     
     //Checks that initial for United Kingdom is still GBP
@@ -53,31 +51,31 @@ class CurrencyConverterTests: XCTestCase {
         XCTAssertEqual(countryModel, chosenCountry)
     }
     
-    //Checks that the Country Name of UK is still "United Kingdom"
-    func testCountryNameUK(){
-        let countryModel = DataService.instance.countries[0].countryName
-        let chosenCountry = "United Kingdom"
+    //Checks that the Country Name of CZK is still "United Kingdom"
+    func testCountryNameCZK(){
+        let countryModel = DataService.instance.countries[0].initial
+        let chosenCountry = "CZK"
         XCTAssertEqual(countryModel, chosenCountry)
     }
     
-    //Checks that the Country Name of USA is still "United States"
-    func testCountryNameUSA(){
-        let countryModel = DataService.instance.countries[1].countryName
-        let chosenCountry = "United States"
+    //Checks that the Country Name of testCountryNameDKK is still "United States"
+    func testCountryNameDKK(){
+        let countryModel = DataService.instance.countries[1].initial
+        let chosenCountry = "DKK"
         XCTAssertEqual(countryModel, chosenCountry)
     }
     
-    //Checks that the Country Name of Australia is still "Australia"
-    func testCountryNameAUD(){
-        let countryModel = DataService.instance.countries[2].countryName
-        let chosenCountry = "Australia"
+    //Checks that the Country Name of EUR is still "Australia"
+    func testCountryNameEUR(){
+        let countryModel = DataService.instance.countries[2].initial
+        let chosenCountry = "EUR"
         XCTAssertEqual(countryModel, chosenCountry)
     }
     
     //Checks that the Country Name of France is still "France"
-    func testCountryNameFRA(){
-        let countryModel = DataService.instance.countries[3].countryName
-        let chosenCountry = "Australia"
+    func testCountryNameGBP(){
+        let countryModel = DataService.instance.countries[3].initial
+        let chosenCountry = "GBP"
         XCTAssertEqual(countryModel, chosenCountry)
     }
     
