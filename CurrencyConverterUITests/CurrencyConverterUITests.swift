@@ -7,9 +7,10 @@
 //
 
 import XCTest
+@testable import CurrencyConverter
 
 class CurrencyConverterUITests: XCTestCase {
-
+    
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
@@ -27,8 +28,8 @@ class CurrencyConverterUITests: XCTestCase {
     }
 
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        //let this = EndVC.instance.conversionTableView.dequeueReusableCell(withIdentifier: "ConversionTableCell")?.accessibilityIdentifier
+        //let cellIdentifier = "ConversionTableCell"
     }
-
+    
 }

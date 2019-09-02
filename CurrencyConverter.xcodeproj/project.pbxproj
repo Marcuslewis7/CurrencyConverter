@@ -14,7 +14,7 @@
 		918F6AFB231C05E4006222B1 /* PLN.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF0231C05E3006222B1 /* PLN.png */; };
 		918F6AFC231C05E4006222B1 /* SEK.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF1231C05E3006222B1 /* SEK.png */; };
 		918F6AFD231C05E4006222B1 /* SGD.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF2231C05E3006222B1 /* SGD.png */; };
-		918F6AFE231C05E4006222B1 /* HUG.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF3231C05E4006222B1 /* HUG.png */; };
+		918F6AFE231C05E4006222B1 /* HUF.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF3231C05E4006222B1 /* HUF.png */; };
 		918F6AFF231C05E4006222B1 /* HKD.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF4231C05E4006222B1 /* HKD.png */; };
 		918F6B00231C05E4006222B1 /* EUR.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF5231C05E4006222B1 /* EUR.png */; };
 		918F6B01231C05E4006222B1 /* DKK.png in Resources */ = {isa = PBXBuildFile; fileRef = 918F6AF6231C05E4006222B1 /* DKK.png */; };
@@ -66,7 +66,7 @@
 		918F6AF0231C05E3006222B1 /* PLN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PLN.png; sourceTree = "<group>"; };
 		918F6AF1231C05E3006222B1 /* SEK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SEK.png; sourceTree = "<group>"; };
 		918F6AF2231C05E3006222B1 /* SGD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SGD.png; sourceTree = "<group>"; };
-		918F6AF3231C05E4006222B1 /* HUG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUG.png; sourceTree = "<group>"; };
+		918F6AF3231C05E4006222B1 /* HUF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HUF.png; sourceTree = "<group>"; };
 		918F6AF4231C05E4006222B1 /* HKD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HKD.png; sourceTree = "<group>"; };
 		918F6AF5231C05E4006222B1 /* EUR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EUR.png; sourceTree = "<group>"; };
 		918F6AF6231C05E4006222B1 /* DKK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DKK.png; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 				918F6AF5231C05E4006222B1 /* EUR.png */,
 				918F6AEC231C05E3006222B1 /* GBP.png */,
 				918F6AF4231C05E4006222B1 /* HKD.png */,
-				918F6AF3231C05E4006222B1 /* HUG.png */,
+				918F6AF3231C05E4006222B1 /* HUF.png */,
 				918F6AED231C05E3006222B1 /* NOK.png */,
 				918F6AF0231C05E3006222B1 /* PLN.png */,
 				918F6AF1231C05E3006222B1 /* SEK.png */,
@@ -352,7 +352,7 @@
 			files = (
 				918F6AFD231C05E4006222B1 /* SGD.png in Resources */,
 				918F6AFA231C05E4006222B1 /* CZK.png in Resources */,
-				918F6AFE231C05E4006222B1 /* HUG.png in Resources */,
+				918F6AFE231C05E4006222B1 /* HUF.png in Resources */,
 				918F6B00231C05E4006222B1 /* EUR.png in Resources */,
 				918F6B01231C05E4006222B1 /* DKK.png in Resources */,
 				91CBC8E7231ABCEC00E9BABA /* PreLoadedPropertyList.plist in Resources */,

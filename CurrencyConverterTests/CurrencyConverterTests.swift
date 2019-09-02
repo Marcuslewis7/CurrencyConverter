@@ -23,88 +23,147 @@ class CurrencyConverterTests: XCTestCase {
         XCTAssertEqual(dataService, 11)
     }
     
-    //Checks that initial for United Kingdom is still GBP
-    func testInitialGBP(){
-        let countryModel = DataService.instance.countries[0].initial
-        let chosenCountry = "GBP"
-        XCTAssertEqual(countryModel, chosenCountry)
-    }
-    
-    //Checks that initial for United States is still USD
-    func testInitialUSD(){
-        let countryModel = DataService.instance.countries[1].initial
-        let chosenCountry = "USA"
-        XCTAssertEqual(countryModel, chosenCountry)
-    }
-    
-    //Checks that initial for Australlia is still AUD
-    func testInitialAUD(){
-        let countryModel = DataService.instance.countries[2].initial
-        let chosenCountry = "AUD"
-        XCTAssertEqual(countryModel, chosenCountry)
-    }
-    
-    //Checks that initial for France is still FRA
-    func testInitialFRA(){
-        let countryModel = DataService.instance.countries[3].initial
-        let chosenCountry = "FRA"
-        XCTAssertEqual(countryModel, chosenCountry)
-    }
-    
-    //Checks that the Country Name of CZK is still "United Kingdom"
-    func testCountryNameCZK(){
-        let countryModel = DataService.instance.countries[0].initial
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialCZK(){
+        let countryModelInitial = DataService.instance.countries[0].initial
+        let countryModelName = DataService.instance.countries[0].countryName
+        let countryFlag = DataService.instance.countries[0].flag
         let chosenCountry = "CZK"
-        XCTAssertEqual(countryModel, chosenCountry)
+        let chosenCountryName = "Czech Koruna"
+        let chosenCountryFlag = "CZK.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
     }
     
-    //Checks that the Country Name of testCountryNameDKK is still "United States"
-    func testCountryNameDKK(){
-        let countryModel = DataService.instance.countries[1].initial
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialDKK(){
+        let countryModelInitial = DataService.instance.countries[1].initial
+        let countryModelName = DataService.instance.countries[1].countryName
+        let countryFlag = DataService.instance.countries[1].flag
         let chosenCountry = "DKK"
-        XCTAssertEqual(countryModel, chosenCountry)
+        let chosenCountryName = "Danish Krone"
+        let chosenCountryFlag = "DKK.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
     }
     
-    //Checks that the Country Name of EUR is still "Australia"
-    func testCountryNameEUR(){
-        let countryModel = DataService.instance.countries[2].initial
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialEUR(){
+        let countryModelInitial = DataService.instance.countries[2].initial
+        let countryModelName = DataService.instance.countries[2].countryName
+        let countryFlag = DataService.instance.countries[2].flag
         let chosenCountry = "EUR"
-        XCTAssertEqual(countryModel, chosenCountry)
+        let chosenCountryName = "Euro"
+        let chosenCountryFlag = "EUR.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
     }
     
-    //Checks that the Country Name of France is still "France"
-    func testCountryNameGBP(){
-        let countryModel = DataService.instance.countries[3].initial
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialGBP(){
+        let countryModelInitial = DataService.instance.countries[3].initial
+        let countryModelName = DataService.instance.countries[3].countryName
+        let countryFlag = DataService.instance.countries[3].flag
         let chosenCountry = "GBP"
-        XCTAssertEqual(countryModel, chosenCountry)
+        let chosenCountryName = "Great British Pound"
+        let chosenCountryFlag = "GBP.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
     }
     
-    //Checks the name of the png file is still correct
-    func testCountryFlagUK(){
-        let countryModel = DataService.instance.countries[0].flag
-        let chosenCountry = "GBP.png"
-        XCTAssertEqual(countryModel, chosenCountry)
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialHKD(){
+        let countryModelInitial = DataService.instance.countries[4].initial
+        let countryModelName = DataService.instance.countries[4].countryName
+        let countryFlag = DataService.instance.countries[4].flag
+        let chosenCountry = "HKD"
+        let chosenCountryName = "Hong Kong Dollar"
+        let chosenCountryFlag = "HKD.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
     }
     
-    //Checks the name of the png file is still correct
-    func testCountryFlagUSA(){
-        let countryModel = DataService.instance.countries[1].flag
-        let chosenCountry = "USA.png"
-        XCTAssertEqual(countryModel, chosenCountry)
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialHUG(){
+        let countryModelInitial = DataService.instance.countries[5].initial
+        let countryModelName = DataService.instance.countries[5].countryName
+        let countryFlag = DataService.instance.countries[5].flag
+        let chosenCountry = "HUF"
+        let chosenCountryName = "Hungarian Forint"
+        let chosenCountryFlag = "HUF.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
     }
     
-    //Checks the name of the png file is still correct
-    func testCountryFlagAUD(){
-        let countryModel = DataService.instance.countries[2].flag
-        let chosenCountry = "AUD.png"
-        XCTAssertEqual(countryModel, chosenCountry)
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialNOK(){
+        let countryModelInitial = DataService.instance.countries[6].initial
+        let countryModelName = DataService.instance.countries[6].countryName
+        let countryFlag = DataService.instance.countries[6].flag
+        let chosenCountry = "NOK"
+        let chosenCountryName = "Norwegian Krone"
+        let chosenCountryFlag = "NOK.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
     }
     
-    //Checks the name of the png file is still correct
-    func testCountryFlagFRA(){
-        let countryModel = DataService.instance.countries[3].flag
-        let chosenCountry = "FRA.png"
-        XCTAssertEqual(countryModel, chosenCountry)
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialPLN(){
+        let countryModelInitial = DataService.instance.countries[7].initial
+        let countryModelName = DataService.instance.countries[7].countryName
+        let countryFlag = DataService.instance.countries[7].flag
+        let chosenCountry = "PLN"
+        let chosenCountryName = "Poland złoty"
+        let chosenCountryFlag = "PLN.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
+    }
+    
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialSEK(){
+        let countryModelInitial = DataService.instance.countries[8].initial
+        let countryModelName = DataService.instance.countries[8].countryName
+        let countryFlag = DataService.instance.countries[8].flag
+        let chosenCountry = "SEK"
+        let chosenCountryName = "Swedish Krona"
+        let chosenCountryFlag = "SEK.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
+    }
+    
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialSGD(){
+        let countryModelInitial = DataService.instance.countries[9].initial
+        let countryModelName = DataService.instance.countries[9].countryName
+        let countryFlag = DataService.instance.countries[9].flag
+        let chosenCountry = "SGD"
+        let chosenCountryName = "Singapore Dollar"
+        let chosenCountryFlag = "SGD.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
+    }
+    
+    //Checks the values for the currency are still correct to ensure proper calls from API, use of .png asset and provides correct name to row.
+    func testInitialUSD(){
+        let countryModelInitial = DataService.instance.countries[10].initial
+        let countryModelName = DataService.instance.countries[10].countryName
+        let countryFlag = DataService.instance.countries[10].flag
+        let chosenCountry = "USD"
+        let chosenCountryName = "United States Dollar"
+        let chosenCountryFlag = "USD.png"
+        XCTAssertEqual(countryModelInitial, chosenCountry)
+        XCTAssertEqual(countryModelName, chosenCountryName)
+        XCTAssertEqual(countryFlag, chosenCountryFlag)
     }
     
     //checks first input country field starts off blank
@@ -119,9 +178,33 @@ class CurrencyConverterTests: XCTestCase {
         XCTAssertEqual(secondChosenCountry, "")
     }
     
+    func testBaseURL(){
+        let myBaseURL = EndVC.instance.baseURL
+        let baseURL = "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios?pairs="
+        XCTAssertEqual(myBaseURL, baseURL)
+    }
+    
+    
+    func testURL(){
+        var url = NSURL(string: "https://europe-west1-revolut-230009.cloudfunctions.net/revolut-ios")
+        
+        let task = URLSession.shared.dataTask(with: url! as URL) {(data, response, error) in
+            if let myResponse = response as? HTTPURLResponse {
+                print("status code=",myResponse.statusCode)
+                //200 means OK
+                if myResponse.statusCode == 200 {
+                    print("200", NSString(data: data!, encoding: String.Encoding.utf8.rawValue))
+                }
+            }else{
+                print("\(error)")
+            }
+        }
+        
+    }
+    
     func testPerformanceExample() {
         self.measure {
-            // Put the code you want to measure the time of here.
+            testURL()
         }
     }
 

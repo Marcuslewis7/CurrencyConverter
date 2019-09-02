@@ -25,7 +25,7 @@ class DataService {
         Country(flag: "GBP.png", initial: "GBP", countryName:  "Great British Pound"),
         Country(flag: "HKD.png", initial: "HKD", countryName:  "Hong Kong Dollar"),
         //Country(flag: "HRK.png", initial: "HRK", countryName:  "Croatian Kuna"),
-        Country(flag: "HUG.png", initial: "HUF", countryName:  "Hungarian Forint"),
+        Country(flag: "HUF.png", initial: "HUF", countryName:  "Hungarian Forint"),
         //Country(flag: "IDR.png", initial: "IDR", countryName:  "Indonesian Rupiah"),
         //Country(flag: "ILS.png", initial: "ILS", countryName:  "Israeli New Shekel"),
         //Country(flag: "INR.png", initial: "INR", countryName:  "Indian Rupee"),
